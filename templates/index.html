@@ -2,66 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Hidden Access Portal</title>
+    <title>Shadow Portal</title>
     <style>
         body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: system-ui;
-            background: radial-gradient(circle at top, #0f172a, #020617);
-            color: #e5e7eb;
+            margin:0;
+            background:#0d0f1a;
+            color:#cbd5e1;
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-family:system-ui;
         }
-        .card {
-            background: #020617;
-            border-radius: 16px;
-            padding: 28px;
-            width: 370px;
-            box-shadow: 0 18px 45px rgba(15,23,42,0.6);
+
+        .box {
+            background:#111427;
+            padding:30px;
+            border-radius:14px;
+            width:350px;
+            box-shadow:0 0 40px rgba(0,150,255,0.1);
         }
-        h1 {
-            margin: 0 0 6px;
-            font-size: 1.4rem;
-            color: #38bdf8;
+
+        h2 {
+            margin-top:0;
+            color:#60a5fa;
+            text-align:center;
         }
-        p {
-            margin: 0 0 16px;
-            font-size: 0.9rem;
-            color: #94a3b8;
+
+        label {
+            font-size:0.9rem;
+            margin-top:14px;
+            display:block;
         }
-        label { display:block; font-size:0.9rem; margin:8px 0 4px; }
+
         input {
-            width:100%; padding:8px;
-            border-radius:8px;
-            background:#020617;
+            width:100%;
+            padding:10px;
+            margin-top:4px;
+            border-radius:10px;
             border:1px solid #1e293b;
+            background:#0d111f;
             color:white;
         }
+
         button {
-            width:100%; margin-top:12px; padding:10px;
-            border-radius:10px; border:none;
-            background:linear-gradient(135deg,#38bdf8,#6366f1);
-            color:white; font-weight:600;
+            width:100%;
+            margin-top:18px;
+            padding:10px;
+            border:none;
+            border-radius:10px;
+            background:linear-gradient(135deg,#3b82f6,#06b6d4);
+            color:white;
+            font-weight:600;
         }
-        .hint { margin-top:10px; font-size:0.8rem; color:#64748b; }
-        .error { margin-top:10px; color:#f87171; font-size:0.85rem; }
+
+        .error {
+            color:#f87171;
+            margin-top:12px;
+        }
+
+        .hint {
+            margin-top:12px;
+            font-size:0.8rem;
+            color:#64748b;
+            text-align:center;
+        }
     </style>
 </head>
 <body>
-<div class="card">
-    <h1>Hidden Access</h1>
-    <p>The admin panel requires an exact username match.</p>
+<div class="box">
+
+    <h2>Shadow Portal</h2>
 
     <form method="post">
-        <label for="username">Username</label>
-        <input id="username" name="username" placeholder="admin">
+        <label>Username</label>
+        <input name="username" placeholder="">
 
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password" placeholder="********">
+        <label>Password</label>
+        <input name="password" type="password" placeholder="••••••••">
 
-        <button type="submit">Login</button>
+        <button type="submit">Enter</button>
 
         {% if error %}
             <div class="error">{{ error }}</div>
@@ -69,8 +89,9 @@
     </form>
 
     <div class="hint">
-        Characters that look identical may not actually be the same.
+        Some characters look similar but aren't the same.
     </div>
+
 </div>
 </body>
 </html>
