@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            margin:0; min-height:100vh;
+            display:flex; align-items:center; justify-content:center;
+            background:radial-gradient(circle at top,#0f172a,#020617);
+            color:white; font-family:system-ui;
+        }
+        .card {
+            padding:28px; border-radius:16px;
+            background:#020617;
+            width:380px;
+            box-shadow:0 15px 45px rgba(0,0,0,0.4);
+        }
+        .flag {
+            background:#052e16;
+            padding:10px; border-radius:10px;
+            border:1px solid #16a34a;
+            font-family:"JetBrains Mono",monospace;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>Access Granted</h2>
+    <p>Welcome, administrator.</p>
+    <div class="flag">
+        {{ flag }}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Hidden Access Portal</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: system-ui;
+            background: radial-gradient(circle at top, #0f172a, #020617);
+            color: #e5e7eb;
+        }
+        .card {
+            background: #020617;
+            border-radius: 16px;
+            padding: 28px;
+            width: 370px;
+            box-shadow: 0 18px 45px rgba(15,23,42,0.6);
+        }
+        h1 {
+            margin: 0 0 6px;
+            font-size: 1.4rem;
+            color: #38bdf8;
+        }
+        p {
+            margin: 0 0 16px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        label { display:block; font-size:0.9rem; margin:8px 0 4px; }
+        input {
+            width:100%; padding:8px;
+            border-radius:8px;
+            background:#020617;
+            border:1px solid #1e293b;
+            color:white;
+        }
+        button {
+            width:100%; margin-top:12px; padding:10px;
+            border-radius:10px; border:none;
+            background:linear-gradient(135deg,#38bdf8,#6366f1);
+            color:white; font-weight:600;
+        }
+        .hint { margin-top:10px; font-size:0.8rem; color:#64748b; }
+        .error { margin-top:10px; color:#f87171; font-size:0.85rem; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Hidden Access</h1>
+    <p>The admin panel requires an exact username match.</p>
+
+    <form method="post">
+        <label for="username">Username</label>
+        <input id="username" name="username" placeholder="admin">
+
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" placeholder="********">
+
+        <button type="submit">Login</button>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+    </form>
+
+    <div class="hint">
+        Characters that look identical may not actually be the same.
+    </div>
+</div>
+</body>
+</html>
