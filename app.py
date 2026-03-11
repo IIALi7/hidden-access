@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-FLAG = "CSC{H0m0glYph_Unl0ck3d}"
+FLAG = "D4rk{H0m0glYph_Unl0ck3d}"
 
 # الحرف "і" هنا سيريلية وليس i الإنجليزية
 CORRECT_USERNAME = "admіn"  # انتبه: هذا هو الحرف І (U+0456)
